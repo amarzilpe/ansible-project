@@ -1,5 +1,5 @@
 - name: Install mysql database
-  yum: name={{ item }} state=installed
+  yum: name="{{ item }}" state=installed
   with_items:
       - mysql-server
       - mysql-client
@@ -11,7 +11,9 @@
     enabled: yes
 
 - name: create application database
-  mysql_db: name={{ db_name }} state=present
+  mysql_db: 
+    name: "{{ db_name }}" 
+    state: present
     
 - name: create database user
   mysql_user:
