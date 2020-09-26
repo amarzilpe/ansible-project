@@ -1,8 +1,0 @@
-    - name: Install python dependencies
-      yum: name={{ item }} state=installed
-      with_items:
-        - python
-        - python-setuptools
-        - python-dev
-        - python-essential
-        - python-pip

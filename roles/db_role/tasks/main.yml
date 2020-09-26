@@ -1,9 +1,8 @@
-#tasks to deploy database mysql 
 - name: Install mysql database
-  yum: name="{{ item }}" state=present
+  yum: name={{ item }} state=installed
   with_items:
-    - mysql-server
-    - mysql-client
+      - mysql-server
+      - mysql-client
 
 - name: start mysql service
   service: 
@@ -12,8 +11,8 @@
     enabled: yes
 
 - name: create application database
-  mysql_db: name="{{ db_name }}" state=present
-
+  mysql_db: name={{ db_name }} state=present
+    
 - name: create database user
   mysql_user:
     name: "{{ db_user }}"

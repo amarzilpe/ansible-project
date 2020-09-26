@@ -1,0 +1,16 @@
+#Task to deploy web server
+- name: Install http web server
+  yum: 
+    name: httpd 
+    state: present
+
+- name: copy source code to destination
+  copy: src=index.html dest=/var/www/html/
+
+- name: Check server up and running
+  service:  
+    name: httpd
+    state: started
+    enabled: yes
+
+    

@@ -1,20 +1,8 @@
 # simple configuration file for web server
 - name: firstplay
   hosts: all
-  tasks:
-    - name: execute command 'date'
-      command: date
-
-    - name: Execute script on server
-      script: test_script.sh
-
-    - name: install web server
-      yum: name=httpd state=latest
-
-    - name: copy index file
-      copy: src=index.html dest=/var/www/html/
-
-    - name: serive status of httpd
-      service: name=httpd state=started enabled=yes
-
+  roles:
+    - web_role
+    - db_role
+ 
 
