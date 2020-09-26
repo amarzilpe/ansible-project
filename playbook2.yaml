@@ -1,0 +1,17 @@
+#File seperation of varible, group of variable and task....main file is mumshad-app.yaml
+- name: Deploy a web app
+  hosts: all
+#The order of role is impotent because the packages are dependent on each other
+  roles:
+    - python 
+    - mysql_db
+    - flask_db
+
+
+
+
+
+
+
+
+
