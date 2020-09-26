@@ -1,6 +1,7 @@
 # simple configuration file for web server
 - name: firstplay
   hosts: all
+  become: true
   roles:
     - web_role
     - shell_role
