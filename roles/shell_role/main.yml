@@ -1,0 +1,8 @@
+#Install general dependencies
+- name: install wget 
+  yum: 
+    name: wget
+    state: installed
+
+- name: setup a repo of mysql
+  shell: wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
