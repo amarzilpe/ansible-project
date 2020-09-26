@@ -4,7 +4,7 @@
     name: httpd 
     state: present
 
-- name: copy source code to destination
+- name: copy index file to destination
   copy: src=index.html dest=/var/www/html/
 
 - name: Check server up and running
