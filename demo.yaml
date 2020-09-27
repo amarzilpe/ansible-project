@@ -4,7 +4,6 @@
   become: true
   roles:
     - web_role
-    - shell_role
     - db_role
  
 
