@@ -1,6 +1,16 @@
+- name: Download sources
+  get_url:
+    url: http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+    dest: /opt/mysql
+
+- name: Install package
+  yum:
+    name: /opt/mysql/mysql-community-release-el7-5.noarch.rpm
+    state: present
+
 - name: Install mysql database
   yum: 
-    name: ["mysql-server", "mysql-client"] 
+    name: ["mysql-server", "mysql-client", "python-mysqldb"] 
     state: present
 
 - name: start mysql service
