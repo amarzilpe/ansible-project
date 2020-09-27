@@ -1,21 +1,20 @@
 - name: Download sources
-  get_url:
-    url: http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
-    dest: /opt/mysql
+  shell: cat <<EOF > /etc/yum.repos.d/MariaDB.repo
+      [mariadb]
+       name = MariaDB
+       baseurl = http://yum.mariadb.org/10.1/rhel7-amd64
+       gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+       gpgcheck=1
+       EOF
 
-- name: Install package
-  yum:
-    name: /opt/mysql/mysql-community-release-el7-5.noarch.rpm
-    state: present
-
-- name: Install mysql database
+- name: Install  mariadb database
   yum: 
-    name: ["mysql-server", "mysql-client", "python-mysqldb"] 
+    name: ["MariaDB-server", "MariaDB-client"] 
     state: present
 
-- name: start mysql service
+- name: start mariadb service
   service: 
-    name: mysql
+    name:  mariadb
     state: started
     enabled: yes
 
