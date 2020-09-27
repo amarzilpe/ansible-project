@@ -1,10 +1,17 @@
 # simple configuration file for web server
-- name: firstplay
+- name: Installation of web server
   hosts: all
   become: true
   become_method: sudo
   roles:
     - web_role
+    
+
+- name: Installation of DB server
+  hosts: all
+  become: true
+  become_method: sudo
+  roles:
     - db_role
  
 
