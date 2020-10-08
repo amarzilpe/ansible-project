@@ -1,0 +1,26 @@
+#If you got any error while executing playbook against number of hosts, you want to stop execution 
+#of playbook at that time on all the hosts.
+- 
+  name: installation web server
+  hosts: any
+  any_error_fatal: true
+
+#-----------------------------------------------------------------------------
+
+#Ignore error when failed.
+-   
+  name: installation web server
+  hosts: any
+  tasks:
+    - name: execute command
+      command: cat /var/www/html/index/html
+    
+    - mail:
+        to: devops@gmail.com
+        subject: "Server Deployed!"
+        body: web server deployed.
+        ignore_error: yes
+      
+    - command: cat /var/logs/server.log
+      register: command_output
+      failed_when: "'ERROR' in command_output.stdout"
