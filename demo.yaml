@@ -3,7 +3,7 @@
   hosts: all
   become: true
   become_method: sudo
-  become_user: ec2-user
+  become_user: apache
   roles:
     - web_role
     
@@ -12,7 +12,7 @@
   hosts: all
   become: true
   become_method: sudo
-  become_user: ec2-user
+  become_user: mariadb
   roles:
     - db_role
  
