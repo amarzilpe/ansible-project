@@ -1,5 +1,5 @@
 - name: Download sources
-  shell: cat <<EOF > /etc/yum.repos.d/MariaDB.repo
+  shell: cat <<EOF > /etc/yum.repos.d/mariadb.repo
           [mariadb]
           name = MariaDB
           baseurl = http://yum.mariadb.org/10.3/centos7-amd64
