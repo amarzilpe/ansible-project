@@ -3,7 +3,6 @@
   hosts: all
   become: yes
   become_method: sudo
-  become_user: ansiadmin
   roles:
     - web_role
     
@@ -12,7 +11,6 @@
   hosts: all
   become: yes
   become_method: sudo
-  become_user: mariadb
   roles:
     - db_role
  
