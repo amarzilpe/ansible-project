@@ -1,7 +1,7 @@
 # simple configuration file for web server
 - name: Installation of web server
   hosts: all
-  become: true
+  become: yes
   become_method: sudo
   become_user: ansiadmin
   roles:
@@ -10,7 +10,7 @@
 
 - name: Installation of DB server
   hosts: all
-  become: true
+  become: yes
   become_method: sudo
   become_user: mariadb
   roles:
