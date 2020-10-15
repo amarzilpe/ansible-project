@@ -1,0 +1,7 @@
+- name: copy sample war file to remote host
+  copy:
+    src: /home/ansi/ansible-project/sample.war
+    dest: /opt/tomcat/webapps/
+
+- name: Start Tomcat
+  service: name=tomcat state=started enabled=yes
