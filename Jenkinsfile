@@ -8,5 +8,6 @@ pipeline{
       steps{
         sh 'ansible-playbook deploy.yml'
       }
+    }
   }
 }
