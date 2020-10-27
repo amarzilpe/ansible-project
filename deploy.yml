@@ -2,11 +2,9 @@
 - hosts: 172.31.5.2
   become: yes
   become_method: sudo
-  
-- name: copy sample war file to remote host
-  copy:
-    src: sample.war
-    dest: /opt/tomcat/webapps/
+  taks:
+    - name: copy sample war file to remote host
+      copy: src=sample.war dest=/opt/tomcat/webapps/
 
-- name: Start Tomcat
-  service: name=tomcat state=started enabled=yes
+    - name: Start Tomcat
+      service: name=tomcat state=started enabled=yes
