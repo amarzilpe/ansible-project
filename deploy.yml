@@ -1,3 +1,8 @@
+---
+- hosts: 172.31.5.2
+  become: yes
+  become_method: sudo
+  
 - name: copy sample war file to remote host
   copy:
     src: sample.war
