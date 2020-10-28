@@ -1,7 +1,7 @@
 
 - hosts: 172.31.5.2
-  become: yes
-  become_method: sudo
+  become: true
+  #become_method: sudo
   taks:
     - name: copy sample war file to remote host
       copy: src=/home/ansi/ansible-project/sample.war dest=/opt/apache-tomcat-8.5.59/webapps
