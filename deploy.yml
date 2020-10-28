@@ -4,7 +4,7 @@
   become_method: sudo
   taks:
     - name: copy sample war file to remote host
-      copy: src=sample.war dest=/opt/apache-tomcat-8.5.59/webapps
+      copy: src=/home/ansi/ansible-project/sample.war dest=/opt/apache-tomcat-8.5.59/webapps
 
     - name: Start Tomcat
       service: name=tomcat state=started enabled=yes
