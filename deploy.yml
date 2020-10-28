@@ -1,6 +1,6 @@
 
 - name: sample war file deployment
-  hosts: server-ansi
+  hosts: server_ansi
   become: true
   become_method: sudo
   tasks:
