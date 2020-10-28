@@ -3,7 +3,7 @@
   hosts: server-ansi
   become: true
   become_method: sudo
-  taks:
+  tasks:
     - name: copy sample war file to remote host
       copy: src=/opt/ansible-project/sample.war dest=/opt/apache-tomcat-8.5.59/webapps
 
